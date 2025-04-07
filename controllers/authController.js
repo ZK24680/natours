@@ -134,6 +134,35 @@ exports.protect = catchAsync(async (req, res, next) => {
   next();
 });
 
+exports.isLogin = catchAsync(async (req, res, next) => {
+  if (req.cookies.jwt) {
+    // Verification token
+
+    const decoded = await promisify(jwt.verify)(
+      req.cookies.jwt,
+      process.env.JWT_SECRET
+    );
+
+    // Check if user still exits
+    const currentUser = await User.findById({ _id: decoded.id });
+
+    if (!currentUser) {
+      return next();
+    }
+
+    // Check if user changed password after the token was issued
+    if (currentUser.changePasswordAfter(decoded.iat)) {
+      return next();
+    }
+
+    console.log(currentUser);
+    //Grant user
+    res.locals.user = currentUser;
+    console.log(res.locals.user);
+  }
+  next();
+});
+
 exports.restrictTo = (...roles) => {
   //roles = ['admin','lead-guide']
 
