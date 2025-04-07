@@ -1,4 +1,5 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const ratelimit = require('express-rate-limit');
 const helmet = require('helmet');
@@ -23,8 +24,34 @@ app.set('views', path.join(`${__dirname}`, 'views'));
 // Serving Static File
 app.use(express.static(path.join(`${__dirname}`, 'public')));
 
-//Security Http header
-app.use(helmet());
+const scriptSrcUrls = [
+  'https://unpkg.com/',
+  'https://tile.openstreetmap.org',
+  'https://cdnjs.cloudflare.com/ajax/libs/axios/1.8.4/axios.min.js'
+];
+const styleSrcUrls = [
+  'https://unpkg.com/',
+  'https://tile.openstreetmap.org',
+  'https://fonts.googleapis.com/'
+];
+const connectSrcUrls = ['https://unpkg.com', 'https://tile.openstreetmap.org'];
+const fontSrcUrls = ['fonts.googleapis.com', 'fonts.gstatic.com'];
+
+//set security http headers
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: [],
+      connectSrc: ["'self'", ...connectSrcUrls],
+      scriptSrc: ["'self'", ...scriptSrcUrls],
+      styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
+      workerSrc: ["'self'", 'blob:'],
+      objectSrc: [],
+      imgSrc: ["'self'", 'blob:', 'data:', 'https:'],
+      fontSrc: ["'self'", ...fontSrcUrls]
+    }
+  })
+);
 
 // Limiting request middleware
 const limiter = ratelimit.rateLimit({
@@ -40,6 +67,7 @@ if (process.env.NODE_ENV === 'development') {
 
 //Body parser middle
 app.use(express.json());
+app.use(cookieParser());
 
 // Mongo Data Sanitize
 app.use(mongoSanitize());
@@ -64,7 +92,7 @@ app.use(
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   // console.log(req.headers);
-
+  console.log(req.cookies);
   next();
 });
 
