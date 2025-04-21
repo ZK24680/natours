@@ -1,9 +1,10 @@
 /* eslint-disable */
-import { login } from './login';
+import { login, logout } from './login';
 import { displayMap } from './mapbox';
 
 const loginForm = document.querySelector('.form');
 const map = document.querySelector('#map');
+const logoutBtn = document.querySelector('.nav__el--logout');
 
 if (map) {
   const locations = JSON.parse(map.dataset.locations);
@@ -18,4 +19,8 @@ if (loginForm) {
     const password = document.querySelector('#password').value;
     login(email, password);
   });
+}
+
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', logout);
 }

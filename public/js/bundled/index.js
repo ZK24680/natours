@@ -1610,6 +1610,7 @@ exports.default = {
 var _mapbox = require("./mapbox");
 var loginForm = document.querySelector('.form');
 var map = document.querySelector('#map');
+var logoutBtn = document.querySelector('.nav__el--logout');
 if (map) {
     var locations = JSON.parse(map.dataset.locations);
     (0, _mapbox.displayMap)(locations);
@@ -1620,12 +1621,16 @@ if (loginForm) loginForm.addEventListener('submit', function(e) {
     var password = document.querySelector('#password').value;
     (0, _login.login)(email, password);
 });
+if (logoutBtn) logoutBtn.addEventListener('click', (0, _login.logout));
 
 },{"./login":"b8gDF","./mapbox":"0jJKG"}],"b8gDF":[function(require,module,exports,__globalThis) {
 /* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "login", function() {
     return login;
+});
+parcelHelpers.export(exports, "logout", function() {
+    return logout;
 });
 var _asyncToGenerator = require("@swc/helpers/_/_async_to_generator");
 var _tsGenerator = require("@swc/helpers/_/_ts_generator");
@@ -1682,6 +1687,53 @@ var login = /*#__PURE__*/ function() {
         });
     });
     return function login(email, password) {
+        return _ref.apply(this, arguments);
+    };
+}();
+var logout = /*#__PURE__*/ function() {
+    var _ref = (0, _asyncToGenerator._)(function() {
+        var res, err;
+        return (0, _tsGenerator._)(this, function(_state) {
+            switch(_state.label){
+                case 0:
+                    _state.trys.push([
+                        0,
+                        2,
+                        ,
+                        3
+                    ]);
+                    return [
+                        4,
+                        (0, _axiosDefault.default)({
+                            method: 'get',
+                            url: 'http://127.0.0.1:3000/api/v1/users/logout'
+                        })
+                    ];
+                case 1:
+                    res = _state.sent();
+                    if (res.data.status === 'success') {
+                        (0, _alert.showAlert)('success', 'Logout Successfully!');
+                        location.reload();
+                    }
+                    return [
+                        3,
+                        3
+                    ];
+                case 2:
+                    err = _state.sent();
+                    (0, _alert.showAlert)('error', 'Error Loging out! Please Try Again!');
+                    return [
+                        3,
+                        3
+                    ];
+                case 3:
+                    return [
+                        2
+                    ];
+            }
+        });
+    });
+    return function logout() {
         return _ref.apply(this, arguments);
     };
 }();

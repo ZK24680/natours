@@ -192,7 +192,7 @@
 61C:\Users\Ivy\Desktop\natours\node_modules\word-wrap\README.md133886506388566627 0
 90C:\Users\Ivy\Desktop\natours\node_modules\rxjs\src\internal\observable\bindNodeCallback.ts133886506440948724 0
 83C:\Users\Ivy\Desktop\natours\node_modules\rxjs\internal\operators\combineAll.js.map133886506429269165 0
-49C:\Users\Ivy\Desktop\natours\routes\userRoutes.js133886502405213682 0
+49C:\Users\Ivy\Desktop\natours\routes\userRoutes.js133896350095498058 0
 70C:\Users\Ivy\Desktop\natours\node_modules\rxjs\util\isArrayLike.js.map133886506432399144 0
 88C:\Users\Ivy\Desktop\natours\node_modules\aria-query\lib\etc\roles\literal\figureRole.js133886506405875142 0
 57C:\Users\Ivy\Desktop\natours\node_modules\lodash\fp\__.js133886506384935959 0
@@ -216,7 +216,7 @@
 70C:\Users\Ivy\Desktop\natours\node_modules\es-abstract\2021\ToUint16.js133886506436218113 0
 59C:\Users\Ivy\Desktop\natours\node_modules\once\package.json133886506382793044 0
 89C:\Users\Ivy\Desktop\natours\node_modules\xterm\lib\renderer\atlas\StaticCharAtlas.js.map133886506410771834 0
-47C:\Users\Ivy\Desktop\natours\public\js\index.js133895469767473111 0
+47C:\Users\Ivy\Desktop\natours\public\js\index.js133896357971530986 0
 55C:\Users\Ivy\Desktop\natours\node_modules\sift\index.js133886506389646189 0
 84C:\Users\Ivy\Desktop\natours\node_modules\rxjs\internal\operators\publishBehavior.js133886506421527208 0
 83C:\Users\Ivy\Desktop\natours\node_modules\rxjs\internal\observable\fromArray.js.map133886506431384300 0
@@ -251,7 +251,7 @@
 62C:\Users\Ivy\Desktop\natours\public\img\tours\tour-6-cover.jpg133886502404442294 0
 68C:\Users\Ivy\Desktop\natours\node_modules\rxjs\internal\Subject.d.ts133886506450838621 0
 83C:\Users\Ivy\Desktop\natours\node_modules\rxjs\_esm2015\internal\operators\every.js133886506413716392 0
-59C:\Users\Ivy\Desktop\natours\public\js\bundled\index.js.map133895470392047807 0
+59C:\Users\Ivy\Desktop\natours\public\js\bundled\index.js.map133896359089002344 0
 77C:\Users\Ivy\Desktop\natours\node_modules\rxjs\src\add\operator\exhaustMap.ts133886506443305455 0
 47C:\Users\Ivy\Desktop\natours\node_modules\bytes133886506390388892 1
 77C:\Users\Ivy\Desktop\natours\node_modules\@parcel\error-overlay\src\styles.js133886515715838434 0
@@ -468,7 +468,7 @@
 70C:\Users\Ivy\Desktop\natours\node_modules\sprintf-js\demo\angular.html133886506397278337 0
 66C:\Users\Ivy\Desktop\natours\node_modules\nodemailer\lib\smtp-pool133886506402244770 1
 91C:\Users\Ivy\Desktop\natours\node_modules\es-abstract\2020\OrdinaryCreateFromConstructor.js133886506428903071 0
-46C:\Users\Ivy\Desktop\natours\public\js\bundled133895470392067690 1
+46C:\Users\Ivy\Desktop\natours\public\js\bundled133896359089028484 1
 84C:\Users\Ivy\Desktop\natours\node_modules\parcel\node_modules\supports-color\license133886515709452678 0
 58C:\Users\Ivy\Desktop\natours\node_modules\set-proto\.nycrc133886506384269001 0
 57C:\Users\Ivy\Desktop\natours\node_modules\lodash\xorBy.js133886506425945426 0
@@ -481,7 +481,7 @@
 55C:\Users\Ivy\Desktop\natours\node_modules\internal-slot133886506396428074 1
 86C:\Users\Ivy\Desktop\natours\node_modules\es-abstract\2017\StrictEqualityComparison.js133886506431954926 0
 63C:\Users\Ivy\Desktop\natours\node_modules\prepend-http\index.js133886506384343935 0
-47C:\Users\Ivy\Desktop\natours\public\js\login.js133895470157149940 0
+47C:\Users\Ivy\Desktop\natours\public\js\login.js133896359087992141 0
 48C:\Users\Ivy\Desktop\natours\public\js\mapbox.js133886565800648437 0
 84C:\Users\Ivy\Desktop\natours\node_modules\rxjs\_esm5\internal\util\isIterable.js.map133886506432604195 0
 67C:\Users\Ivy\Desktop\natours\node_modules\rxjs\util\isFunction.d.ts133886506445366737 0
@@ -527,7 +527,7 @@
 75C:\Users\Ivy\Desktop\natours\node_modules\nodemailer\lib\smtp-pool\index.js133886506400855959 0
 86C:\Users\Ivy\Desktop\natours\node_modules\axobject-query\lib\etc\objects\SwitchRole.js133886506406302490 0
 108C:\Users\Ivy\Desktop\natours\node_modules\posthtml\node_modules\dom-serializer\lib\esm\foreignNames.d.ts.map133886515712817479 0
-55C:\Users\Ivy\Desktop\natours\public\js\bundled\index.js133895470392005466 0
+55C:\Users\Ivy\Desktop\natours\public\js\bundled\index.js133896359088959774 0
 105C:\Users\Ivy\Desktop\natours\node_modules\cli-width\.nyc_output\00ef1b3d-3687-482b-8d03-de2f76b58f54.json133886506387362725 0
 71C:\Users\Ivy\Desktop\natours\node_modules\rxjs\operators\concatMap.d.ts133886506441852121 0
 56C:\Users\Ivy\Desktop\natours\node_modules\dom-serializer133886515713389052 1
@@ -20825,6 +20825,6 @@
 55C:\Users\Ivy\Desktop\natours\dev-data\data\reviews.json133886502402476810 0
 60C:\Users\Ivy\Desktop\natours\dev-data\data\tours-simple.json133886502402489908 0
 53C:\Users\Ivy\Desktop\natours\dev-data\data\users.json133886502402499898 0
-58C:\Users\Ivy\Desktop\natours\controllers\authController.js133886502402427863 0
+58C:\Users\Ivy\Desktop\natours\controllers\authController.js133896356594861043 0
 60C:\Users\Ivy\Desktop\natours\controllers\reviewController.js133886502402441031 0
 59C:\Users\Ivy\Desktop\natours\controllers\viewsController.js133886502402463696 0
