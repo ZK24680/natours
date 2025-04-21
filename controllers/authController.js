@@ -155,10 +155,10 @@ exports.isLogin = catchAsync(async (req, res, next) => {
       return next();
     }
 
-    console.log(currentUser);
+    // console.log(currentUser);
     //Grant user
     res.locals.user = currentUser;
-    console.log(res.locals.user);
+    // console.log(res.locals.user);
   }
   next();
 });
