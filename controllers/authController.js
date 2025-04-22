@@ -143,7 +143,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   next();
 });
 
-exports.isLogin = catchAsync(async (req, res, next) => {
+exports.isLogin = async (req, res, next) => {
   if (req.cookies.jwt) {
     // Verification token
 
@@ -170,7 +170,7 @@ exports.isLogin = catchAsync(async (req, res, next) => {
     // console.log(res.locals.user);
   }
   next();
-});
+};
 
 exports.restrictTo = (...roles) => {
   //roles = ['admin','lead-guide']
