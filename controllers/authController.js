@@ -64,7 +64,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 exports.login = catchAsync(async (req, res, next) => {
   // check valid request (check email and password are included in request)
   const { email, password } = req.body;
-  console.log(password, email);
+  // console.log(password, email);
 
   if (!email || !password) {
     return next(new AppError('Please provide email and password', 400));
@@ -140,6 +140,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 
   //Grant user
   req.user = currentUser;
+  res.locals.user = currentUser;
   next();
 });
 
