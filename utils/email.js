@@ -12,7 +12,14 @@ module.exports = class Email {
 
   newTransporter() {
     if (process.env.NODE_ENV === 'production') {
-      return 1;
+      return nodemailer.createTransport({
+        host: process.env.BRAVO_HOST,
+        port: process.env.BROVO_PORT,
+        auth: {
+          user: process.env.BROVO_USERNAME,
+          pass: process.env.BROVO_PASSWORD
+        }
+      });
     }
 
     return nodemailer.createTransport({

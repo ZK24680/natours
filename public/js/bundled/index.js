@@ -1611,11 +1611,13 @@ var _tsGenerator = require("@swc/helpers/_/_ts_generator");
 var _login = require("./login");
 var _mapbox = require("./mapbox");
 var _updateSettings = require("./updateSettings");
+var _stripe = require("./stripe");
 var loginForm = document.querySelector('.form--login');
 var map = document.querySelector('#map');
 var logoutBtn = document.querySelector('.nav__el--logout');
 var userDataForm = document.querySelector('.form-user-data');
 var userPasswordForm = document.querySelector('.form-user-settings');
+var booktour = document.querySelector('#book-tour');
 if (map) {
     var locations = JSON.parse(map.dataset.locations);
     (0, _mapbox.displayMap)(locations);
@@ -1667,8 +1669,31 @@ if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/ 
         return _ref.apply(this, arguments);
     };
 }());
+if (booktour) booktour.addEventListener('click', /*#__PURE__*/ function() {
+    var _ref = (0, _asyncToGenerator._)(function(e) {
+        var tourId;
+        return (0, _tsGenerator._)(this, function(_state) {
+            switch(_state.label){
+                case 0:
+                    tourId = e.target.dataset.tourid;
+                    return [
+                        4,
+                        (0, _stripe.bookTour)(tourId)
+                    ];
+                case 1:
+                    _state.sent();
+                    return [
+                        2
+                    ];
+            }
+        });
+    });
+    return function(e) {
+        return _ref.apply(this, arguments);
+    };
+}());
 
-},{"./login":"b8gDF","./mapbox":"0jJKG","./updateSettings":"lXts3","@swc/helpers/_/_async_to_generator":"lcUO6","@swc/helpers/_/_ts_generator":"aTQjM"}],"b8gDF":[function(require,module,exports,__globalThis) {
+},{"./login":"b8gDF","./mapbox":"0jJKG","./updateSettings":"lXts3","@swc/helpers/_/_async_to_generator":"lcUO6","@swc/helpers/_/_ts_generator":"aTQjM","./stripe":"1PJlq"}],"b8gDF":[function(require,module,exports,__globalThis) {
 /* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "login", function() {
@@ -7919,6 +7944,59 @@ var updateSettings = /*#__PURE__*/ function() {
     };
 }();
 
-},{"@swc/helpers/_/_async_to_generator":"lcUO6","@swc/helpers/_/_ts_generator":"aTQjM","axios":"2VXDg","@parcel/transformer-js/src/esmodule-helpers.js":"c5Jn8","./alert":"iW6s1"}]},["g3Ab8","eDNcn"], "eDNcn", "parcelRequire11c7", {})
+},{"@swc/helpers/_/_async_to_generator":"lcUO6","@swc/helpers/_/_ts_generator":"aTQjM","axios":"2VXDg","@parcel/transformer-js/src/esmodule-helpers.js":"c5Jn8","./alert":"iW6s1"}],"1PJlq":[function(require,module,exports,__globalThis) {
+/* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "bookTour", function() {
+    return bookTour;
+});
+var _asyncToGenerator = require("@swc/helpers/_/_async_to_generator");
+var _tsGenerator = require("@swc/helpers/_/_ts_generator");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var bookTour = /*#__PURE__*/ function() {
+    var _ref = (0, _asyncToGenerator._)(function(tourId) {
+        var session, err;
+        return (0, _tsGenerator._)(this, function(_state) {
+            switch(_state.label){
+                case 0:
+                    _state.trys.push([
+                        0,
+                        2,
+                        ,
+                        3
+                    ]);
+                    return [
+                        4,
+                        (0, _axiosDefault.default)("http://127.0.0.1:3000/api/v1/bookings/checkout-session/".concat(tourId))
+                    ];
+                case 1:
+                    session = _state.sent();
+                    console.log(session);
+                    window.location.href = session.data.session.url;
+                    return [
+                        3,
+                        3
+                    ];
+                case 2:
+                    err = _state.sent();
+                    console.log(err);
+                    return [
+                        3,
+                        3
+                    ];
+                case 3:
+                    return [
+                        2
+                    ];
+            }
+        });
+    });
+    return function bookTour(tourId) {
+        return _ref.apply(this, arguments);
+    };
+}();
+
+},{"@swc/helpers/_/_async_to_generator":"lcUO6","@swc/helpers/_/_ts_generator":"aTQjM","axios":"2VXDg","@parcel/transformer-js/src/esmodule-helpers.js":"c5Jn8"}]},["g3Ab8","eDNcn"], "eDNcn", "parcelRequire11c7", {})
 
 //# sourceMappingURL=index.js.map
