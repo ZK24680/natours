@@ -1675,6 +1675,7 @@ if (booktour) booktour.addEventListener('click', /*#__PURE__*/ function() {
         return (0, _tsGenerator._)(this, function(_state) {
             switch(_state.label){
                 case 0:
+                    booktour.textContent = 'processing.....';
                     tourId = e.target.dataset.tourid;
                     return [
                         4,

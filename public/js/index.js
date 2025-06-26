@@ -61,6 +61,7 @@ if (userPasswordForm) {
 
 if (booktour) {
   booktour.addEventListener('click', async function(e) {
+    booktour.textContent = 'processing.....';
     const tourId = e.target.dataset.tourid;
 
     await bookTour(tourId);
